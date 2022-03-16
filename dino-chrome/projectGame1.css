@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+}
+
+#board {
+    width: 100%;
+    height: 600px;
+    position: relative;
+}
+
+#fondo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url("./fondo.png");
+    background-repeat: repeat;
+    background-position: 0 0;
+    background-size: auto 100%;
+    animation: fondoMove 20s linear infinite;
+}
+
+#fondo img {
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    animation: fondoMove 5s linear infinite;
+}
+
+#player {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 185px;
+    margin-left: 200px;
+}
+
+#player img {
+    width: 100%;
+    height: 100%;
+}
+
+.playerJump {
+    animation: playerJump 0.7s linear;
+}
+
+@keyframes playerJump {
+    0% {
+        bottom: 185px;
+    }
+    45%,
+    55% {
+        bottom: 245px;
+    }
+}
+
+@keyframes fondoMove {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -80000px 0;
+    }
+}
