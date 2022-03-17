@@ -8,10 +8,43 @@ body {
     position: relative;
 }
 
+.button.play {
+    border-style: solid;
+    border-width: 37px 0 37px 60px;
+}
+
+.button {
+    position: absolute;
+    border: 0;
+    background: transparent;
+    box-sizing: border-box;
+    width: 0;
+    height: 74px;
+    border-color: transparent transparent transparent #202020;
+    transition: 1000ms all ease;
+    cursor: pointer;
+    border-style: double;
+    border-width: 0px 0 0px 60px;
+    bottom: 200px;
+}
+
+.button:hover {
+    border-color: transparent transparent transparent #404040;
+}
+
+.button:hover {
+    border-color: #404040;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+}
+
 #fondo {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 50%;
     top: 0;
     left: 0;
     background: url("./fondo.png");
@@ -28,12 +61,18 @@ body {
     animation: fondoMove 5s linear infinite;
 }
 
+#scoreConteiner {
+    text-align: center;
+    font-size: 50px;
+    margin-top: 1%;
+}
+
 #player {
     width: 50px;
     height: 50px;
     position: absolute;
-    bottom: 185px;
-    margin-left: 200px;
+    bottom: 392px;
+    margin-left: 5%;
 }
 
 #player img {
@@ -42,16 +81,30 @@ body {
 }
 
 .playerJump {
-    animation: playerJump 0.7s linear;
+    animation: playerJump 0.95s linear;
+}
+
+#cactus1 {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 400px;
+    right: 0;
+    animation: cactusMove 4s linear infinite;
+}
+
+#catus1 img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 @keyframes playerJump {
     0% {
-        bottom: 185px;
+        bottom: 392px;
     }
     45%,
     55% {
-        bottom: 245px;
+        bottom: 485px;
     }
 }
 
@@ -61,5 +114,14 @@ body {
     }
     to {
         background-position: -80000px 0;
+    }
+}
+
+@keyframes cactusMove {
+    0% {
+        right: 0%;
+    }
+    100% {
+        right: 100%;
     }
 }
